@@ -1,4 +1,6 @@
-class Tiglav{
+//import Raphael from '../node_modules/raphael/raphael';
+
+class Tiglav {
     constructor(divId, largura, altura, data,callback,options){
         let defaultOptions = { 
             dotColor: "#FFF",
@@ -11,7 +13,7 @@ class Tiglav{
             options = defaultOptions;
         }
         Object.keys(defaultOptions).forEach(function (key) {
-            var val = options[key];
+            let val = options[key];
             if(val === undefined){
                 options[key] = defaultOptions[key];
                 return;
@@ -32,15 +34,15 @@ class Tiglav{
         this.dotColor = options.dotColor;
         this.radius = options.radius;
 
-        var paper = Raphael(divId);
+        let paper = Raphael(divId);
         paper.setViewBox(0,0,largura,altura,true);
         //paper.setSize('100%', '100%');
-        var svg = document.querySelector("svg");
+        let svg = document.querySelector("svg");
         svg.removeAttribute("width");
         svg.removeAttribute("height");
 
         let margem = 150;
-        var workLarea = largura - margem*2;
+        let workLarea = largura - margem*2;
         let distX = workLarea/(data.length-1);
         let contDistX = margem;
         let aryX=[];
@@ -50,7 +52,7 @@ class Tiglav{
 
         for(let i = 0; i < data.length;i++){
             aryX[i]=contDistX;
-            var l = paper.circle(contDistX, y, this.radius)
+            let l = paper.circle(contDistX, y, this.radius)
                 .attr({fill: this.dotColor})
                 .data("id",data[i].id)
                 .click(function(){
@@ -83,13 +85,13 @@ class Tiglav{
         });
     };
     setColor(idDot, color){
-        var dot = this.getDot(idDot);
+        let dot = this.getDot(idDot);
         if(dot === undefined) return;
         dot.attr({"fill":color});
     };
     alertDot(idDot){
-        var classObj = this;
-        var dot = classObj.getDot(idDot);
+        let classObj = this;
+        let dot = classObj.getDot(idDot);
         if(dot === undefined)
         {
             console.error("Nao encontrado.");
@@ -109,12 +111,12 @@ class Tiglav{
     };
     stopAlertDot(idDot){
         clearInterval(this.dotAlertsEvents[idDot]);
-        var dot = this.getDot(idDot);
+        let dot = this.getDot(idDot);
         dot.attr({"fill":this.dotColor});
         this.dotAlertsEvents[idDot]=undefined;
     };
     static setDotColor(idTimeline,idDot, color){
-        var k = Tiglav.prototype.timelines.find(function(e){
+        let k = Tiglav.prototype.timelines.find(function(e){
             if(e.divId==idTimeline)
                 return e;
         });        
@@ -122,7 +124,7 @@ class Tiglav{
         k.setColor(idDot, color);
     };
     static alertDot(idTimeline,idDot){
-        var k = Tiglav.prototype.timelines.find(function(e){
+        let k = Tiglav.prototype.timelines.find(function(e){
             if(e.divId==idTimeline)
                 return e;
         });        
@@ -130,7 +132,7 @@ class Tiglav{
         k.alertDot(idDot);
     };
     static alertDotStop(idTimeline,idDot){
-        var k = Tiglav.prototype.timelines.find(function(e){
+        let k = Tiglav.prototype.timelines.find(function(e){
             if(e.divId==idTimeline)
                 return e;
         });
@@ -138,14 +140,15 @@ class Tiglav{
         k.stopAlertDot(idDot);
     };
     static generateUUID() { // Public Domain/MIT
-        var d = new Date().getTime();
+        let d = new Date().getTime();
         if (typeof performance !== 'undefined' && typeof performance.now === 'function'){
             d += performance.now(); //use high-precision timer if available
         }
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = (d + Math.random() * 16) % 16 | 0;
+            let r = (d + Math.random() * 16) % 16 | 0;
             d = Math.floor(d / 16);
             return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
         });
     };
 }
+module.exports = new Tiglav();

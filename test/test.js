@@ -1,10 +1,10 @@
-const lib = require('../src/tiglav');
+const l = require('../src/tiglav.js');
 
 describe('TESTS', () => {
-  test('Basic test', (done) => {
-    lib.hello().then((message) => {
-      expect(message).toBe('It works!');
+  test('Instance test', (done) => {
+      
+      var test = new l.Tiglav();
+      expect(test).toBeInstanceOf(typeof(Tiglav));
       done();
-    });
   });
 });
