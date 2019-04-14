@@ -67,7 +67,7 @@
                 newDiv.className = "limit-box";
                 
                 let h2 = document.createElement('h2');
-                h2.innerText = json.timelines[i].id + " " + json.timelines[i].nome ;
+                h2.innerText = json.timelines[i].id + " " + json.timelines[i].name ;
                 document.getElementById('holder').append(h2);
                 
                 document.getElementById('holder').append(newDiv);
@@ -80,35 +80,5 @@
             }
         });
     });
-    /*var m = new Tiglav("holder",800,100,json.pontosControle,function(id){
-            console.log(id);
-        },
-        opts 
-    );
-    m.alertDot(55);
-    m.alertDot(77);
-    setInterval(function(){
-        m.stopAlertDot(55);
-    }, 5*1000);
-    var m2 = new Tiglav("holder2",800,100,
-            [
-                {
-                    ordem: 1,
-                    nome: "ZP001",
-                    id: 11
-                },
-                {
-                    ordem: 2,
-                    nome: "ZX0010",
-                    id: 12
-                }
-            ]
-        ,function(id){
-            console.log(id);
-        },
-        opts 
-    );
-    m2.alertDot(12);
-    */
 </script>
 </body>
