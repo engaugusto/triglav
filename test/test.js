@@ -1,5 +1,5 @@
 const { Raphael } = require('raphael');
-const Tiglav = require('../src/Tiglav.js');
+const Tiglav = require('../src/Tiglav');
 
 describe('TESTS', () => {
   test('Instance test', (done) => {
