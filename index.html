@@ -1,0 +1,114 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.8/raphael.min.js"></script>
+<head>
+    <style type="text/css">
+    .limit-timelines{
+        width:1024px;
+        height:250px;
+    }
+    .limit-box{
+        width:1024px;
+        height:50px;
+    }
+    .holder{
+        margin : 0;
+        padding : 0;
+        overflow : hidden;
+        height:100%;
+        width:100%;
+        background-color: orange;
+    }
+</style>
+</head>
+<body>
+    <div class="limit-timelines">
+        <div id="holder" class="holder"></div>
+    </div>
+    <p>
+    timeline id
+    <input type="text" id="alertTimeline"/>
+
+    </p>
+    <p>
+    dot id
+    <input type="text" id="alertId"/>
+</p>
+    <button onclick="test()" >alert</button>
+    <button onclick="test2()" >stop alert</button>
+    <button onclick="test3()" >set color</button>
+<script type="text/javascript"   src="src/Tiglav.js" ></script>
+<script type="text/javascript">
+    function test(){
+        let at = document.getElementById('alertTimeline').value;
+        let l = document.getElementById('alertId').value;
+        Tiglav.alertDot(at,l);
+    }
+    function test2(){
+        let at = document.getElementById('alertTimeline').value;
+        let l = document.getElementById('alertId').value;
+        Tiglav.alertDotStop(at,l);
+    }
+    function test3(){
+        let at = document.getElementById('alertTimeline').value;
+        let l = document.getElementById('alertId').value;
+        Tiglav.setDotColor(at,l, "#F0F");
+    }
+    fetch("test/test.json").then(function(response){
+        response.json().then(function(json){
+            let opts = {
+                dotColor: "#000",
+                lineColor: "#F00",
+                blinkColor: '#F00',
+                "stroke-width": 3
+            };
+            
+            for(let i = 0; i< json.timelines.length;i++){
+                let newDiv = document.createElement('div');
+                newDiv.id = json.timelines[i].id;
+                newDiv.className = "limit-box";
+                
+                let h2 = document.createElement('h2');
+                h2.innerText = json.timelines[i].id + " " + json.timelines[i].nome ;
+                document.getElementById('holder').append(h2);
+                
+                document.getElementById('holder').append(newDiv);
+                var m = new Tiglav(newDiv.id,1024,50,json.timelines[i].dots,function(id){
+                    alert('hi '+id);
+                    console.log(id);
+                    },
+                    opts 
+                );
+            }
+        });
+    });
+    /*var m = new Tiglav("holder",800,100,json.pontosControle,function(id){
+            console.log(id);
+        },
+        opts 
+    );
+    m.alertDot(55);
+    m.alertDot(77);
+    setInterval(function(){
+        m.stopAlertDot(55);
+    }, 5*1000);
+    var m2 = new Tiglav("holder2",800,100,
+            [
+                {
+                    ordem: 1,
+                    nome: "ZP001",
+                    id: 11
+                },
+                {
+                    ordem: 2,
+                    nome: "ZX0010",
+                    id: 12
+                }
+            ]
+        ,function(id){
+            console.log(id);
+        },
+        opts 
+    );
+    m2.alertDot(12);
+    */
+</script>
+</body>
