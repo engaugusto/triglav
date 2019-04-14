@@ -1,4 +1,4 @@
-const { Raphael } = require('Raphael');
+const { Raphael } = require('raphael');
 const Tiglav = require('../src/Tiglav.js');
 
 describe('TESTS', () => {
