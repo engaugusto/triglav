@@ -1,4 +1,4 @@
-class Tiglav {
+class triglav {
   constructor(divId, largura, altura, data, callback, options) {
     let defaultOptions = {
       dotColor: '#FFF',
@@ -20,9 +20,9 @@ class Tiglav {
       }
       options[key] = val;
     });
-    if (Tiglav.prototype.timelines === undefined)
-      Tiglav.prototype.timelines = [];
-    Tiglav.prototype.timelines.push(this);
+    if (triglav.prototype.timelines === undefined)
+      triglav.prototype.timelines = [];
+    triglav.prototype.timelines.push(this);
 
     this.divId = divId;
     this.largura = largura;
@@ -125,21 +125,21 @@ class Tiglav {
     this.dotAlertsEvents[idDot] = undefined;
   }
   static setDotColor(idTimeline, idDot, color) {
-    let k = Tiglav.prototype.timelines.find(function(e) {
+    let k = triglav.prototype.timelines.find(function(e) {
       if (e.divId == idTimeline) return e;
     });
     if (k === undefined) return;
     k.setColor(idDot, color);
   }
   static alertDot(idTimeline, idDot) {
-    let k = Tiglav.prototype.timelines.find(function(e) {
+    let k = triglav.prototype.timelines.find(function(e) {
       if (e.divId == idTimeline) return e;
     });
     if (k === undefined) return;
     k.alertDot(idDot);
   }
   static alertDotStop(idTimeline, idDot) {
-    let k = Tiglav.prototype.timelines.find(function(e) {
+    let k = triglav.prototype.timelines.find(function(e) {
       if (e.divId == idTimeline) return e;
     });
     if (k === undefined) return;
@@ -162,5 +162,5 @@ class Tiglav {
   }
 }
 if (typeof process === 'object' && process + '' === '[object process]') {
-  module.exports = Tiglav;
+  module.exports = triglav;
 }

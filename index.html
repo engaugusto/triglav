@@ -34,22 +34,22 @@
     <button onclick="test()" >alert</button>
     <button onclick="test2()" >stop alert</button>
     <button onclick="test3()" >set color</button>
-<script type="text/javascript"   src="src/Tiglav.js" ></script>
+<script type="text/javascript"   src="triglav.js" ></script>
 <script type="text/javascript">
     function test(){
         let at = document.getElementById('alertTimeline').value;
         let l = document.getElementById('alertId').value;
-        Tiglav.alertDot(at,l);
+        triglav.alertDot(at,l);
     }
     function test2(){
         let at = document.getElementById('alertTimeline').value;
         let l = document.getElementById('alertId').value;
-        Tiglav.alertDotStop(at,l);
+        triglav.alertDotStop(at,l);
     }
     function test3(){
         let at = document.getElementById('alertTimeline').value;
         let l = document.getElementById('alertId').value;
-        Tiglav.setDotColor(at,l, "#F0F");
+        triglav.setDotColor(at,l, "#F0F");
     }
     fetch("test/test.json").then(function(response){
         response.json().then(function(json){
@@ -70,7 +70,7 @@
                 document.getElementById('holder').append(h2);
                 
                 document.getElementById('holder').append(newDiv);
-                var m = new Tiglav(newDiv.id,1024,50,json.timelines[i].dots,function(id){
+                var m = new triglav(newDiv.id,1024,50,json.timelines[i].dots,function(id){
                     alert('hi '+id);
                     console.log(id);
                     },

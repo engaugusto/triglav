@@ -1,13 +1,13 @@
 {
-  "name": "Triglav",
-  "version": "1.0.0",
+  "name": "triglav",
+  "version": "1.0.1",
   "description": "Criar uma timeline responsiva utilizando SVG",
   "author": "Carlos Augusto <carlos.augusto@nodsys.com.br>",
   "homepage": "https://github.com/engaugusto/Triglav#readme",
   "keywords": [
     "node"
   ],
-  "main": "src/index.js",
+  "main": "triglav.js",
   "files": [
     "src"
   ],

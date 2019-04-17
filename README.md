@@ -9,7 +9,8 @@ Long description.
 Install package
 
 ```bash
-$ npm install --save Triglav
+$ npm install
+$ npm start
 ```
 
 ## Usage
@@ -39,7 +40,7 @@ let opts = {
                 lineColor: "#FFF",
                 blinkColor: '#F00'
             };
-var m = new Tiglav(divId,width,heigth,array, function(id){
+var m = new Triglav(divId,width,heigth,array, function(id){
                     console.log(id);
                     },
                     opts 
