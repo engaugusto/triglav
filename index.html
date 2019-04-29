@@ -25,7 +25,7 @@
     </div>
     <p>
     timeline id
-    <input type="text" id="alertTimeline" value="1"/>
+    <input type="text" id="alertTimeline" value="70"/>
     </p>
     <p>
     dot id
@@ -66,7 +66,7 @@
                 newDiv.className = "limit-box";
                 
                 let h2 = document.createElement('h2');
-                h2.innerText = json.timelines[i].id + " " + json.timelines[i].name ;
+                h2.innerText = json.timelines[i].id + " -  " + json.timelines[i].name ;
                 document.getElementById('holder').append(h2);
                 
                 document.getElementById('holder').append(newDiv);

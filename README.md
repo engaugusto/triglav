@@ -3,6 +3,9 @@
 > Criar uma timeline responsiva utilizando SVG
 
 Long description.
+#Example
+
+![Alt Text]( https://raw.githubusercontent.com/engaugusto/tiglav/master/imgs/2.gif)
 
 ## Installation
 
