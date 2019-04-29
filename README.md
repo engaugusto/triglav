@@ -28,7 +28,7 @@ $ npm start
 
 ## Usage
 
-```js
+```javascript
 let width = 300;
 let height = 300;
 let divId = "test";
@@ -45,17 +45,17 @@ let array = [
           "id": "66"
       }
    ]
-]
+];
 let opts = {
-                dotColor: "#FFF",
-                lineColor: "#FFF",
-                blinkColor: '#F00'
-            };
+    dotColor: "#FFF",
+    lineColor: "#FFF",
+    blinkColor: '#F00'
+};
 var m = new Triglav(divId,width,heigth,array, function(id){
-                    console.log(id);
-                    },
-                    opts 
-                );
+    console.log(id);
+    },
+    opts 
+);
 ```
 
 ## Development
