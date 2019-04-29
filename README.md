@@ -28,8 +28,6 @@ $ npm start
 
 ## Usage
 
-Say `It works!`
-
 ```js
 let width = 300;
 let height = 300;
