@@ -2,6 +2,7 @@
 
 EN
 > Create a responsive timeline using SVG
+
 PT-BR
 > Criar uma timeline responsiva utilizando SVG
 
@@ -10,6 +11,7 @@ PT-BR
 
 EN
 >Example of the component, receive a JSON and render a single Knit. You could click or call to alert a single dot
+
 PT-BR
 >Exemplo do componente, ele recebe um JSON e renderiza uma timeline unica. Voce pode exibir um alerta em um ponto especifico
 
