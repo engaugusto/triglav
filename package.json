@@ -1,6 +1,6 @@
 {
   "name": "triglav",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Criar uma timeline responsiva utilizando SVG",
   "author": "Carlos Augusto <carlos.augusto@nodsys.com.br>",
   "homepage": "https://github.com/engaugusto/Triglav#readme",
@@ -9,7 +9,7 @@
   ],
   "main": "triglav.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "coverage": "jest --colors --coverage",
