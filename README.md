@@ -6,7 +6,6 @@ EN
 PT-BR
 > Criar uma timeline responsiva utilizando SVG
 
-
 # Example
 
 EN
@@ -77,6 +76,13 @@ $ npm install
 | Action                                   | Usage               |
 | ---------------------------------------- | ------------------- |
 | Starting development mode                | `npm start`         |
+
+## Todos
+
+Port to React as a Component.
+Port to Angular as a Component.
+Create more unit test.
+Automatizated the build with a minified distribution.
 
 ## Author
 
